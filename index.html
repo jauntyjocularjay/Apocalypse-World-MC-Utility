@@ -9,13 +9,84 @@
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
+  <h1>Apocalypse World MC Utility</h1>
+  <div>
+    <h2>Dice Roller with modifiers</h2>
+    <p>Pick a modifier:</p>
+    <div id="RollModifier">
+      <button type="button" id="rollNegThree">-3</button>
+      <button type="button" id="rollNegTwo">-2</button>
+      <button type="button" id="rollNegOne">-1</button>
+      <button type="button" id="rollZero">0</button>
+      <button type="button" id="rollOne">1</button>
+      <button type="button" id="rollTwo">2</button>
+      <button type="button" id="rollThree">3</button>
+      <button type="button" id="rollFour">4</button>
+    </div>
 
- <!--
-This script places a badge on your repl's full-browser view back to your repl's cover page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green, teal, blue, blurple, magenta, pink!
--->
-<script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
+    <table class="tg">
+      <thead>
+        <tr>
+          <th class="tg-0pky input">Die 1</th>
+          <th class="tg-0pky input">Die 2</th>
+          <th class="tg-0pky input">Modifier</th>
+          <th class="tg-0pky output">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tg-0pky input" id="input1">0</td>
+          <td class="tg-0pky input" id="input2">0</td>
+          <td class="tg-0pky input" id="input3">0</td>
+          <td class="tg-0pky output" id="output">0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>10+ is success</p>
+    <p>7-9 is success with fumble</p>
+    <p><=6 is fail</p>
+  </div>
+
+  <div id="harmCalculation">
+    <label for="harm-calculation" id="harmCalculation">
+      <h2>Calculate Net Harm:</h2>
+    </label>
+
+    <select name="Weapon" id="weaponHarm">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <select name="Armor" id="armorHarm">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <input type="button" id="submitHarm" value="Submit"></input>
+
+    <output name="Net Harm" id="netHarm">0</output>
+
+  </div>
+
+
+  <script src="script.js"></script>
 </body>
 
 </html>
