@@ -5,26 +5,21 @@ html, body {
   color: lightgray;
 }
 
+button, select {
+  height: 30px;
+  width: 60px;
+}
+
 .input{
   color:#595959;
 }
 
 .output{
-  color:white;
-}
-
-.rollbtn {
-  height: 30px;
-  width: 45px;
-}
-
-.submit {
-  height: 30px;
-  width: 60px;
+  color: lightgray;
 }
 
 .buffer {
-  height: 60px;
+  height: 512px;
   width: 2px;
 }
 

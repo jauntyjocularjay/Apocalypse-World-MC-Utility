@@ -12,7 +12,7 @@ class Die {
 }
 
 // Dice Roller with Modifiers Elements
-const modValue = {
+const modifierElements = {
   negThree: document.querySelector("#rollNegThree"),
   negTwo: document.querySelector("#rollNegTwo"),
   negOne: document.querySelector("#rollNegOne"),
@@ -27,14 +27,16 @@ const modValue = {
 const submitHarm = document.querySelector("#submitHarm")
 
 // Dice Roller with Modifiers EventListeners
-modValue.negThree.addEventListener("click", () => {statRollWithModifier(-3)});
-modValue.negTwo.addEventListener("click", () => {statRollWithModifier(-2)});
-modValue.negOne.addEventListener("click", () => {statRollWithModifier(-1)});
-modValue.zero.addEventListener("click", () => {statRollWithModifier(0)});
-modValue.one.addEventListener("click", () => {statRollWithModifier(1)});
-modValue.two.addEventListener("click", () => {statRollWithModifier(2)});
-modValue.three.addEventListener("click", () => {statRollWithModifier(3)});
-modValue.four.addEventListener("click", () => {statRollWithModifier(4)});
+const diceRoller =  {
+  dice1: modifierElements.negThree.addEventListener("click", () => {statRollWithModifier(-3)}),
+  dice2: modifierElements.negTwo.addEventListener("click", () => {statRollWithModifier(-2)}),
+  dice3: modifierElements.negOne.addEventListener("click", () => {statRollWithModifier(-1)}),
+  dice4: modifierElements.zero.addEventListener("click", () => {statRollWithModifier(0)}),
+  dice5: modifierElements.one.addEventListener("click", () => {statRollWithModifier(1)}),
+  dice6: modifierElements.two.addEventListener("click", () => {statRollWithModifier(2)}),
+  dice7: modifierElements.three.addEventListener("click", () => {statRollWithModifier(3)}),
+  dice8: modifierElements.four.addEventListener("click", () => {statRollWithModifier(4)})
+}
 
 // Harm Calculation EventListeners
 submitHarm.addEventListener("click", () => {calculateHarm()});
@@ -42,8 +44,8 @@ submitHarm.addEventListener("click", () => {calculateHarm()});
 // Dice Roller with Modifiers Functions
 function statRollWithModifier(modifier) {
   const die = new Die(6);
-  let d1 = die.roll();
-  let d2 = die.roll();
+  const d1 = die.roll();
+  const d2 = die.roll();
 
   document.getElementById("input1").textContent = d1;
   document.getElementById("input2").textContent = d2;

@@ -45,12 +45,14 @@
 
     <p>10+ is success</p>
     <p>7-9 is success with fumble</p>
-    <p><=6 is fail</p>
+    <p><7 is fail</p>
   </div>
 
   <div id="harmCalculation">
     <label for="harm-calculation" id="harmCalculation">
-      <h2>Calculate Net Harm:</h2>
+      <h2>
+        Net Harm: <output name="Net Harm" id="netHarm">0</output>
+      </h2>
     </label>
 
     <select name="Weapon" id="weaponHarm">
@@ -79,13 +81,12 @@
       <option value="10">10</option>
     </select>
 
-    <input type="button" id="submitHarm" value="Submit"></input>
-
-    <output name="Net Harm" id="netHarm">0</output>
+    <button type="button" id="submitHarm">Submit</button>
 
   </div>
 
-
+  <div class="buffer"></div>
+  
   <script src="script.js"></script>
 </body>
 
