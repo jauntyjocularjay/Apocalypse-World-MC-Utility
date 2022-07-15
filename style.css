@@ -7,7 +7,7 @@ html, body {
 
 button, select {
   height: 30px;
-  width: 60px;
+  min-width: 60px;
 }
 
 .input{
@@ -18,9 +18,18 @@ button, select {
   color: lightgray;
 }
 
+.actionable{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .buffer {
   height: 512px;
   width: 2px;
+}
+
+.hidden {
+  display: none;
 }
 
 .tg {
@@ -29,30 +38,30 @@ button, select {
   margin: 25px;
 }
 
-.tg td{
-    border-color:black;
-    border-style:solid;
-    border-width:1px;
-    font-family:Arial, sans-serif;
-    font-size:14px;
-    overflow:hidden;
-    padding:10px 5px;
-    word-break:normal;
-}
-
 .tg th{
-    border-color:black;
-    border-style:solid;
-    border-width:1px;
-    font-family:Arial, sans-serif;
-    font-size:14px;
-    font-weight:normal;
-    overflow:hidden;
-    padding:10px 5px;
-    word-break:normal;
+  border-color:lightgray;
+  border-style:solid;
+  border-width:1px;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  font-weight:normal;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
 }
 
-.tg .tg-0pky{
+.tg td{
+  border-color:lightgray;
+  border-style:solid;
+  border-width:1px;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+
+.tg .tg-0pky .tg-0lax{
   border-color:inherit;
   text-align:left;
   vertical-align:top;

@@ -10,7 +10,8 @@
 
 <body>
   <h1>Apocalypse World MC Utility</h1>
-  <div>
+
+  <div id="rollDiceWithModifiers">
     <h2>Dice Roller with modifiers</h2>
     <p>Pick a modifier:</p>
     <div id="RollModifier">
@@ -43,9 +44,32 @@
       </tbody>
     </table>
 
-    <p>10+ is success</p>
-    <p>7-9 is success with fumble</p>
-    <p><7 is fail</p>
+    <table class="tg">
+      <thead class="actionable" id="successScaleHead">
+        <tr>
+          <th class="tg-0lax">
+            Success Scale
+          </th>
+          <th class="tg-0lax hidden" id="successScaleProbabilityHead">
+            Probability
+          </th>
+        </tr>
+      </thead>
+      <tbody class="hidden" id="successScaleBody">
+        <tr>
+          <td class="tg-0lax">10+ is success</td>
+          <td id="success"></td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">7-9 is success with fumble</td>
+          <td id="fumble"></td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">&lt;7 is fail</td>
+          <td id="fail"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div id="harmCalculation">
@@ -81,12 +105,28 @@
       <option value="10">10</option>
     </select>
 
-    <button type="button" id="submitHarm">Submit</button>
+    <button type="button" id="submitHarm">Find Net Harm</button>
 
   </div>
 
-  <div class="buffer"></div>
+  <div id="basicMoves">
+    <h2>Basic Moves</h2>
+    <select id="basicMovesSelector">
+      <option>Pick a move.</option>
+      <option id="under-fire">Act Under Fire</option>
+      <option id="sucker">Sucker Somebody</option>
+      <option id="aggro">Go Aggro</option>
+      <option id="manipulate">Seduce or Manipulate</option>
+      <option id="help-interfere">Help or Interfere</option>
+      <option id="read-sitch">Read a Sitch</option>
+      <option id="read-person">Read a Person</option>
+      <option id="open-brain">Open Your Brain</option>
+      <option id="session-end">Session End</option>
+    </select>
+  </div>
   
+  <div class="buffer"></div>
+
   <script src="script.js"></script>
 </body>
 
