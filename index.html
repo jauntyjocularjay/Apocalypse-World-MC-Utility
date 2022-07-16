@@ -73,58 +73,211 @@
   </div>
 
   <div id="harmCalculation">
-    <label for="harm-calculation" id="harmCalculation">
-      <h2>
-        Net Harm: <output name="Net Harm" id="netHarm">0</output>
-      </h2>
-    </label>
+    <form>
+      <label for="harm-calculation" id="harmCalculation">
+        <h2>
+          Net Harm: <output name="Net Harm" id="netHarm">0</output>
+        </h2>
+      </label>
 
-    <select name="Weapon" id="weaponHarm">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
+      <select name="Weapon" id="weaponHarm">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
 
-    <select name="Armor" id="armorHarm">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
+      <select name="Armor" id="armorHarm">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
 
-    <button type="button" id="submitHarm">Find Net Harm</button>
-
+      <button type="button" id="submitHarm">Find Net Harm</button>
+    </form>
   </div>
 
   <div id="basicMoves">
-    <h2>Basic Moves</h2>
-    <select id="basicMovesSelector">
-      <option>Pick a move.</option>
-      <option id="under-fire">Act Under Fire</option>
-      <option id="sucker">Sucker Somebody</option>
-      <option id="aggro">Go Aggro</option>
-      <option id="manipulate">Seduce or Manipulate</option>
-      <option id="help-interfere">Help or Interfere</option>
-      <option id="read-sitch">Read a Sitch</option>
-      <option id="read-person">Read a Person</option>
-      <option id="open-brain">Open Your Brain</option>
-      <option id="session-end">Session End</option>
-    </select>
+    <form>
+      <h2>Basic Moves</h2>
+      <select id="basicMovesSelector">
+        <option value="under-fire">Act Under Fire</option>
+        <option value="aggro">Go Aggro</option>
+        <option value="sucker">Sucker Somebody</option>
+        <option value="seize">Seize by Force</option>
+        <option value="seduce-manipulate">Seduce or Manipulate</option>
+        <option value="read-sitch">Read a Sitch</option>
+        <option value="read-person">Read a Person</option>
+        <option value="open-brain">Open Your Brain</option>
+        <option value="help-interfere">Help or Interfere</option>
+        <option value="lifestyle">Lifestyle Upkeep</option>
+        <option value="work-gig">Work a Gig</option>
+        <option value="session-end">Session End</option>
+      </select>
+      <button id="getMove">Show Move</button>
+    </form>
+    <div id="basicMovesDescriptors">
+      <div class="hidden" id="under-fire">
+        <p>roll+cool</p>
+        <p>On a 10+, you do it.</p>
+        <p>On a 7–9, you flinch, hesitate, or stall:
+          the MC can offer you a worse outcome, a hard bargain, or an ugly
+          choice.</p>
+        <p>On a miss, be prepared for the worst.</p>
+      </div>
+
+      <div class="hidden" id="aggro">
+        <p>roll+hard</p>
+        <p>On a 10+, they have to choose 1:</p>
+        <p>• Force your hand and suck it up.</p>
+        <p>• Cave and do what you want.</p>
+        <p>On a 7–9, they can choose 1 of the above, or 1 of the following:</p>
+        <p>• Get the hell out of your way.</p>
+        <p>• Barricade themselves securely in.</p>
+        <p>• Give you something they think you want, or tell you what you want to hear.</p>
+        <p>• Back off calmly, hands where you can see.</p>
+        <p>On a miss, be prepared for the worst.</p>
+      </div>
+
+      <div class="hidden" id="sucker">
+        <p>When you attack someone unsuspecting or helpless, ask the
+          MC if you could miss. If you could, treat it as going aggro, but your
+          victim has no choice to cave and do what you want. If you couldn’t,
+          you simply inflict harm as established.</p>
+      </div>
+
+      <div class="hidden" id="seize">
+        <p>To seize something by force, exchange harm, but first roll+hard.
+        <p>On a 10+, choose 3. On a 7–9, choose 2. On a miss, choose 1:</p>
+        <p>• You inflict terrible harm (+1harm).</p>
+        <p>• You suffer little harm (-1harm).</p>
+        <p>• You take definite and undeniable control of it.</p>
+        <p>• You impress, dismay, or frighten your enemy.</p>
+      </div>
+
+      <div class="hidden" id="seduce-manipulate">
+        <p>roll+hot</p>
+        <p>For NPCs: on a 10+, they’ll go along with you, unless or
+          until some fact or action betrays the reason you gave them.</p>
+        <p>On a 7–9,
+          they’ll go along with you, but they need some concrete assurance,
+          corroboration, or evidence first.</p>
+        <p>For PCs: on a 10+, both.</p>
+        <p>On a 7–9, choose 1:</p>
+        <p>• If they go along with you, they mark experience.</p>
+        <p>• If they refuse, erase one of their stat highlights for the remainder of
+          the session.</p>
+        <p>What they do then is up to them.</p>
+        <p>On a miss, for either NPCs or PCs, be prepared for the worst.</p>
+      </div>
+
+      <div class="hidden" id="read-sitch">
+        <p>roll+sharp</p>
+        <p>On a hit, you can ask the MC questions.
+          Whenever you act on one of the MC’s answers, take +1.</p>
+        <p>On a 10+, ask 3. On a 7–9, ask 1:</p>
+        <p>• Where’s my best escape route, way in, or way past?</p>
+        <p>• Which enemy is most vulnerable to me?</p>
+        <p>• Which enemy is the biggest threat?</p>
+        <p>• What should I be on the lookout for?</p>
+        <p>• What’s my enemy’s true position?</p>
+        <p>• Who’s in control here?</p>
+        <p>On a miss, ask 1 anyway, but be prepared for the worst.</p>
+      </div>
+
+      <div class="hidden" id="read-person">
+        <p>roll+sharp</p>
+        <p>On a 10+, hold 3.</p>
+        <p>On a 7–9, hold 1.</p>
+        <p>While you’re interacting with them,
+          spend your hold to ask their player questions, 1 for 1:</p>
+        <p>• Is your character telling the truth?</p>
+        <p>• What’s your character really feeling?</p>
+        <p>• What does your character intend to do?</p>
+        <p>• What does your character wish I’d do?</p>
+        <p>• How could I get your character to —?</p>
+        <p>On a miss, ask 1 anyway, but be prepared for the worst.</p>
+      </div>
+
+      <div class="hidden" id="open-brain">
+        <p>roll+weird</p>
+        <p>On a hit, the MC tells you something new and interesting
+          about the current situation, and might ask you a question or two;
+          answer them.</p>
+        <p>On a 10+, the MC gives you good detail.</p>
+        <p>On a 7–9, the
+          MC gives you an impression. If you already know all there is to know,
+          the MC will tell you that.</p>
+        <p>On a miss, be prepared for the worst.</p>
+      </div>
+
+      <div class="hidden" id="help-interfere">
+        <p>roll+Hx</p>
+        <p>On a 10+, they take +2 (help) or -2 (interfere) to their roll.</p>
+        <p>On a 7–9, they take +1 (help) or -1 (interfere) to their roll.</p>
+        <p>On a miss, be prepared for the worst.</p>
+      </div>
+
+      <div class="hidden" id="lifestyle">
+        <p>At the beginning of the session, spend 1- or 2-barter for your
+          lifestyle.</p>
+        </p>If you can’t or won’t, tell the MC and answer her questions.</p>
+        <p>1-barter at the beginning of the session, that’s the
+          quality of life her character’s had and can generally expect. The same as
+          most people around her.</p>
+        <p>2-barter at the beginning of the session, she has a quality
+          of life that is substantially, notably better. Whatever other people eat,
+          drink, and wear, she’s eating, drinking, and wearing better. She sleeps
+          more comfortably and safer, and has more control over her personal
+          environment.</p>
+        <p>0-barter, this should mean that at the beginning of the session
+          she’s desperately hungry and dying of thirst, but hold off. It could turn out
+          that way.</p>
+        <p>Another PC springs for them;</p>
+        <p>If none of them can or will, though, you get to choose:</p>
+        <p>• Go straight to, yes, she’s desperately hungry and dying of thirst. Inflict
+          harm as established. Take away stuff.</p>
+        <p>• Choose a suitable NPC; Now the debt is between her and your NPC.</p>
+        <p>• Ask player which NPC You can either negotiate an appropriate arrangement
+          in summary, or else jump into play: have her read a person, seduce &
+          manipulate, go aggro, or whatever she needs to do to get her way.</p>
+      </div>
+
+      <div class="hidden" id="work-gig">
+        <p>If you need jingle during a session, tell the MC you’d like to work a gig.</p>
+      </div>
+
+      <div class="hidden" id="session-end">
+        <p>At the end of every session, choose a character who knows you
+          better than they used to. If there’s more than one, choose one at your
+          whim. Tell that player to add +1 to their Hx with you on their sheet.
+          If this brings them to Hx+4, they reset to Hx+1 (and therefore mark
+          experience).</p>
+        <p>If no one knows you better, choose a character who
+          doesn’t know you as well as they thought, or choose any character at
+          your whim. Tell that player to take -1 to their Hx with you on their
+          sheet. If this brings them to Hx -3, they reset to Hx=0 (and therefore
+          mark experience).</p>
+      </div>
+
+
+
+    </div>
   </div>
-  
+
   <div class="buffer"></div>
 
   <script src="script.js"></script>

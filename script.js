@@ -39,6 +39,13 @@ const scaleCollapser = {
 // Harm Calculation Elements
 const submitHarm = document.querySelector("#submitHarm");
 
+// Basic Moves Elements
+const basicMoves = {
+  selector: document.querySelector("#basicMovesSelector"),
+  button: document.querySelector("#getMove"),
+  current: null
+};
+
 // Dice Roller with Modifiers EventListeners
 const diceRoller = {
   dice1: modifierElements.negThree.addEventListener("click", () => { statRollWithModifier(-3) }),
@@ -55,7 +62,10 @@ const diceRoller = {
 scaleCollapser.head.addEventListener("click", () => { collapseSuccessScale() })
 
 // Harm Calculation EventListeners
-submitHarm.addEventListener("click", () => { calculateHarm() });
+submitHarm.addEventListener("click", (e) => { calculateHarm(e) });
+
+// Basic Moves EventListeners
+basicMoves.button.addEventListener("click", (e) => { displayBasicMove(e) });
 
 // Dice Roller with Modifiers Functions
 function statRollWithModifier(modifier) {
@@ -144,7 +154,9 @@ function collapseSuccessScale() {
 }
 
 // Harm Calculation Functions
-function calculateHarm() {
+function calculateHarm(e) {
+  e.preventDefault();
+  
   const weaponHarm = document.querySelector("#weaponHarm").value;
   const armorHarm = document.querySelector("#armorHarm").value;
   let result = weaponHarm - armorHarm;
@@ -152,4 +164,19 @@ function calculateHarm() {
   result = (result < 0) ? 0 : result;
 
   document.querySelector("#netHarm").textContent = result;
+}
+
+// Basic Moves EventListeners
+function displayBasicMove(e) {
+  e.preventDefault();
+
+  if (basicMoves.current != null) {
+    basicMoves.current.classList.toggle("hidden");
+    basicMoves.current = document.querySelector(`#${basicMoves.selector.value}`);
+    basicMoves.current.classList.toggle("hidden");
+  } else {
+    basicMoves.current = document.querySelector(`#${basicMoves.selector.value}`);
+    basicMoves.current.classList.toggle("hidden");
+  }
+
 }
