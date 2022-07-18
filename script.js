@@ -3,7 +3,6 @@
 class AWDice {
   constructor() {
     this.sides = 6;
-    this.count = 2;
   }
 
   roll() {
