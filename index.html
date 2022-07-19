@@ -12,64 +12,66 @@
   <h1>Apocalypse World MC Utilities</h1>
 
   <div id="rollDiceWithModifiers">
-    <h2>Dice Roller with modifiers</h2>
-    <p>Pick a modifier:</p>
-    <div id="RollModifier">
-      <button type="button" id="rollNegThree">-3</button>
-      <button type="button" id="rollNegTwo">-2</button>
-      <button type="button" id="rollNegOne">-1</button>
-      <button type="button" id="rollZero">0</button>
-      <button type="button" id="rollOne">1</button>
-      <button type="button" id="rollTwo">2</button>
-      <button type="button" id="rollThree">3</button>
-      <button type="button" id="rollFour">4</button>
-    </div>
+    <form>
+      <h2>Dice Roller with modifiers</h2>
+      <p>Pick a modifier:</p>
+      <div id="RollModifier">
+        <button type="button" id="rollNegThree">-3</button>
+        <button type="button" id="rollNegTwo">-2</button>
+        <button type="button" id="rollNegOne">-1</button>
+        <button type="button" id="rollZero">0</button>
+        <button type="button" id="rollOne">1</button>
+        <button type="button" id="rollTwo">2</button>
+        <button type="button" id="rollThree">3</button>
+        <button type="button" id="rollFour">4</button>
+      </div>
 
-    <table class="tg">
-      <thead>
-        <tr>
-          <th class="tg-0pky input">Die 1</th>
-          <th class="tg-0pky input">Die 2</th>
-          <th class="tg-0pky input">Modifier</th>
-          <th class="tg-0pky output">Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="tg-0pky input" id="input1">0</td>
-          <td class="tg-0pky input" id="input2">0</td>
-          <td class="tg-0pky input" id="input3">0</td>
-          <td class="tg-0pky output" id="output">0</td>
-        </tr>
-      </tbody>
-    </table>
+      <table class="tg">
+        <thead>
+          <tr>
+            <th class="tg-0pky input">Die 1</th>
+            <th class="tg-0pky input">Die 2</th>
+            <th class="tg-0pky input">Modifier</th>
+            <th class="tg-0pky output">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-0pky input" id="input1">0</td>
+            <td class="tg-0pky input" id="input2">0</td>
+            <td class="tg-0pky input" id="input3">0</td>
+            <td class="tg-0pky output" id="output">0</td>
+          </tr>
+        </tbody>
+      </table>
 
-    <table class="tg">
-      <thead class="actionable" id="successScaleHead">
-        <tr>
-          <th class="tg-0lax">
-            Success Scale
-          </th>
-          <th class="tg-0lax hidden" id="successScaleProbabilityHead">
-            Probability
-          </th>
-        </tr>
-      </thead>
-      <tbody class="hidden" id="successScaleBody">
-        <tr>
-          <td class="tg-0lax">10+ is success</td>
-          <td id="success">0.00</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">7-9 is success with fumble</td>
-          <td id="fumble">0.00</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">&lt;7 is fail</td>
-          <td id="fail">0.00</td>
-        </tr>
-      </tbody>
-    </table>
+      <table class="tg">
+        <thead class="actionable" id="successScaleHead">
+          <tr>
+            <th class="tg-0lax">
+              Success Scale
+            </th>
+            <th class="tg-0lax hidden" id="successScaleProbabilityHead">
+              Probability
+            </th>
+          </tr>
+        </thead>
+        <tbody class="hidden" id="successScaleBody">
+          <tr>
+            <td class="tg-0lax">10+ is success</td>
+            <td id="success">0.00</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">7-9 is success with fumble</td>
+            <td id="fumble">0.00</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">&lt;7 is fail</td>
+            <td id="fail">0.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
   </div>
 
   <div id="harmCalculation">

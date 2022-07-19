@@ -14,6 +14,7 @@ class AWDice {
   }
 }
 
+// HTML Elements
 const Elements = {
   rollWithModifier: {
     negThree: document.querySelector("#rollNegThree"),
@@ -50,16 +51,17 @@ const Elements = {
   }
 };
 
+// Event Listeners
 const Listeners = {
   rollWithModifier: {
-    l1: Elements.rollWithModifier.negThree.addEventListener("click", () => { Functions.statRollWithModifier(-3) }),
-    l2: Elements.rollWithModifier.negTwo.addEventListener("click", () => { Functions.statRollWithModifier(-2) }),
-    l3: Elements.rollWithModifier.negOne.addEventListener("click", () => { Functions.statRollWithModifier(-1) }),
-    l4: Elements.rollWithModifier.zero.addEventListener("click", () => { Functions.statRollWithModifier(0) }),
-    l5: Elements.rollWithModifier.one.addEventListener("click", () => { Functions.statRollWithModifier(1) }),
-    l6: Elements.rollWithModifier.two.addEventListener("click", () => { Functions.statRollWithModifier(2) }),
-    l7: Elements.rollWithModifier.three.addEventListener("click", () => { Functions.statRollWithModifier(3) }),
-    l8: Elements.rollWithModifier.four.addEventListener("click", () => { Functions.statRollWithModifier(4) })
+    l1: Elements.rollWithModifier.negThree.addEventListener("click", (e) => { Functions.statRollWithModifier(e,-3) }),
+    l2: Elements.rollWithModifier.negTwo.addEventListener("click", (e) => { Functions.statRollWithModifier(e, -2) }),
+    l3: Elements.rollWithModifier.negOne.addEventListener("click", (e) => { Functions.statRollWithModifier(e, -1) }),
+    l4: Elements.rollWithModifier.zero.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 0) }),
+    l5: Elements.rollWithModifier.one.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 1) }),
+    l6: Elements.rollWithModifier.two.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 2) }),
+    l7: Elements.rollWithModifier.three.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 3) }),
+    l8: Elements.rollWithModifier.four.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 4) })
   },
   scaleCollapser: {
     l1: Elements.scaleCollapser.head.addEventListener("click", () => { Functions.collapseSuccessScale() })
@@ -72,9 +74,11 @@ const Listeners = {
   }
 };
 
+// Functions
 const Functions = {
-  statRollWithModifier: (modifier) => {
-
+  statRollWithModifier: (e, modifier) => {
+    e.preventDefault();
+    
     const dice = new AWDice(6);
     const result = dice.roll();
     const probability = new Object();
