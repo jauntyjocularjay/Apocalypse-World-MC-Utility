@@ -47,14 +47,14 @@ const Elements = {
   basicMoves: {
     selector: document.querySelector("#basicMovesSelector"),
     button: document.querySelector("#getMove"),
-    current: null
+    currentElement: null
   }
 };
 
 // Event Listeners
 const Listeners = {
   rollWithModifier: {
-    l1: Elements.rollWithModifier.negThree.addEventListener("click", (e) => { Functions.statRollWithModifier(e,-3) }),
+    l1: Elements.rollWithModifier.negThree.addEventListener("click", (e) => { Functions.statRollWithModifier(e, -3) }),
     l2: Elements.rollWithModifier.negTwo.addEventListener("click", (e) => { Functions.statRollWithModifier(e, -2) }),
     l3: Elements.rollWithModifier.negOne.addEventListener("click", (e) => { Functions.statRollWithModifier(e, -1) }),
     l4: Elements.rollWithModifier.zero.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 0) }),
@@ -78,7 +78,7 @@ const Listeners = {
 const Functions = {
   statRollWithModifier: (e, modifier) => {
     e.preventDefault();
-    
+
     const dice = new AWDice(6);
     const result = dice.roll();
     const probability = new Object();
@@ -172,16 +172,19 @@ const Functions = {
   displayBasicMove: (e) => {
     e.preventDefault();
 
-    if (Elements.basicMoves.current != null) {
-      Elements.basicMoves.current.classList.toggle("hidden");
-      Elements.basicMoves.current = document.querySelector(`#${Elements.basicMoves.selector.value}`);
-      Elements.basicMoves.current.classList.toggle("hidden");
+    const newElement = document.querySelector(`#${Elements.basicMoves.selector.value}`);
 
-    } else {
-
-      Elements.basicMoves.current = document.querySelector(`#${Elements.basicMoves.selector.value}`);
-      Elements.basicMoves.current.classList.toggle("hidden");
-
+    if (Elements.basicMoves.currentElement === null) {
+      Elements.basicMoves.currentElement = newElement;
+      Elements.basicMoves.currentElement.classList.toggle("hidden");
+    } 
+    else if (Elements.basicMoves.currentElement ===  newElement) {
+      Elements.basicMoves.currentElement.classList.toggle("hidden");
+    } 
+    else {
+      Elements.basicMoves.currentElement.classList.toggle("hidden");
+      Elements.basicMoves.currentElement = newElement;
+      Elements.basicMoves.currentElement.classList.toggle("hidden");
     }
 
   }
