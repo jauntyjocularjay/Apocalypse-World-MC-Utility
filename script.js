@@ -99,56 +99,64 @@ const Functions = {
       r12: 2.78
     };
 
-    if (modifier === -3) {
+    if (modifier === -3){
 
       probability.success = 0.00;
       probability.fumble = d.r12 + d.r11 + d.r10 - 0.01;
       probability.fail = d.r9 + d.r8 + d.r7 + d.r6 + d.r5 + d.r4 + d.r3 + d.r2;
 
-    } else if (modifier === -2) {
+    } 
+    else if (modifier === -2) {
 
       probability.success = d.r12 - 0.01;
       probability.fumble = d.r11 + d.r10 + d.r9;
       probability.fail = d.r8 + d.r7 + d.r6 + d.r5 + d.r4 + d.r3 + d.r2;
 
-    } else if (modifier === -1) {
+    } 
+    else if (modifier === -1) {
 
       probability.success = d.r12 + d.r11 - 0.01;
       probability.fumble = d.r10 + d.r9 + d.r8;
       probability.fail = d.r7 + d.r6 + d.r5 + d.r4 + d.r3 + d.r2;
 
-    } else if (modifier === 0) {
+    } 
+    else if (modifier === 0) {
 
       probability.success = d.r12 + d.r11 + d.r10 - 0.01;
       probability.fumble = d.r9 + d.r8 + d.r7;
       probability.fail = d.r6 + d.r5 + d.r4 + d.r3 + d.r2;
 
-    } else if (modifier === 1) {
+    } 
+    else if (modifier === 1) {
 
       probability.success = d.r12 + d.r11 + d.r10 + d.r9 - 0.01;
       probability.fumble = d.r8 + d.r7 + d.r6;
       probability.fail = d.r5 + d.r4 + d.r3 + d.r2;
 
-    } else if (modifier === 2) {
+    } 
+    else if (modifier === 2) {
 
       probability.success = d.r12 + d.r11 + d.r10 + d.r9 + d.r8 - 0.01;
       probability.fumble = d.r7 + d.r6 + d.r5;
       probability.fail = d.r4 + d.r3 + d.r2;
 
-    } else if (modifier === 3) {
+    } 
+    else if (modifier === 3) {
 
       probability.success = d.r12 + d.r11 + d.r10 + d.r9 + d.r8 + d.r7 - 0.01;
       probability.fumble = d.r6 + d.r5 + d.r4;
       probability.fail = d.r3 + d.r2;
 
-    } else if (modifier === 4) {
+    } 
+    else if (modifier === 4) {
 
       probability.success = d.r12 + d.r11 + d.r10 + d.r9 + d.r8 + d.r7 + d.r6 - 0.01;
       probability.fumble = d.r5 + d.r4 + d.r3;
       probability.fail = d.r2;
 
-    } else {
-      alert(`Invalid Input in Functions.rollWithModifier()`);
+    } 
+    else {
+      alert(`Invalid modifier argument in Functions.rollWithModifier()`);
     }
 
     Elements.rollWithModifier.input1.textContent = result.d1;
