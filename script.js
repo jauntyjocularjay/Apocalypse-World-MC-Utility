@@ -187,9 +187,3 @@ const Functions = {
   }
 };
 
-// Change
-/*
-From the Replit Documentation: Programming & IDE > Git commands reference guide
-$ git checkout main
-$ git merge my-cool-feature
-*/
