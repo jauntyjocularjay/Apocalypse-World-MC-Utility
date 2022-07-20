@@ -1,0 +1,6 @@
+From the Replit Documentation: Programming & IDE > Git commands reference guide
+
+Merging branches into main.
+$ git checkout main
+$ git merge my-cool-feature
+
