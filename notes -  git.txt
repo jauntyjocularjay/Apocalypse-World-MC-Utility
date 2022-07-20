@@ -18,3 +18,6 @@ $ git branch -d BRANCH-NAME
 
 Deleting branches, remote
 $ git push origin :branch1
+
+Project housecleaning
+$ git gc
