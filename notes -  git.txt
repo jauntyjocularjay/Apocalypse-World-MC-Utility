@@ -4,3 +4,14 @@ Merging branches into main.
 $ git checkout main
 $ git merge my-cool-feature
 
+Renaming branches
+$ git branch -m OLD-BRANCH-NAME NEW-BRANCH-NAME
+
+Branch Naming Convention
+triage - trg/feature-being-worked-on
+fix    - fix/feature-being-worked-on
+test   - tst/feature-being-worked-on
+done   - dne/feature-being-worked-on
+
+Deleting branches
+$ git branch -d BRANCH-NAME
