@@ -46,39 +46,41 @@ const Elements = {
   },
   basicMoves: {
     selector: document.querySelector("#basicMovesSelector"),
-    button: document.querySelector("#getMove"),
-    current: null
+    showButton: document.querySelector("#getMove"),
+    clearButton: document.querySelector("#clearMove"),
+    currentElement: null //?
   }
 };
 
 // Event Listeners
 const Listeners = {
-  rollWithModifier: {
-    l1: Elements.rollWithModifier.negThree.addEventListener("click", (e) => { Functions.statRollWithModifier(e,-3) }),
-    l2: Elements.rollWithModifier.negTwo.addEventListener("click", (e) => { Functions.statRollWithModifier(e, -2) }),
-    l3: Elements.rollWithModifier.negOne.addEventListener("click", (e) => { Functions.statRollWithModifier(e, -1) }),
-    l4: Elements.rollWithModifier.zero.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 0) }),
-    l5: Elements.rollWithModifier.one.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 1) }),
-    l6: Elements.rollWithModifier.two.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 2) }),
-    l7: Elements.rollWithModifier.three.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 3) }),
-    l8: Elements.rollWithModifier.four.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 4) })
-  },
-  scaleCollapser: {
-    l1: Elements.scaleCollapser.head.addEventListener("click", () => { Functions.collapseSuccessScale() })
-  },
-  calculateHarm: {
-    l1: Elements.calculateHarm.submitHarm.addEventListener("click", (e) => { Functions.calculateHarm(e) })
-  },
-  basicMoves: {
-    l1: Elements.basicMoves.button.addEventListener("click", (e) => { Functions.displayBasicMove(e) })
-  }
+  rollWithModifier: [
+    Elements.rollWithModifier.negThree.addEventListener("click", (e) => { Functions.statRollWithModifier(e, -3) }),
+    Elements.rollWithModifier.negTwo.addEventListener("click", (e) => { Functions.statRollWithModifier(e, -2) }),
+    Elements.rollWithModifier.negOne.addEventListener("click", (e) => { Functions.statRollWithModifier(e, -1) }),
+    Elements.rollWithModifier.zero.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 0) }),
+    Elements.rollWithModifier.one.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 1) }),
+    Elements.rollWithModifier.two.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 2) }),
+    Elements.rollWithModifier.three.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 3) }),
+    Elements.rollWithModifier.four.addEventListener("click", (e) => { Functions.statRollWithModifier(e, 4) })
+  ],
+  scaleCollapser: [
+    Elements.scaleCollapser.head.addEventListener("click", () => { Functions.collapseSuccessScale() })
+  ],
+  calculateHarm: [
+    Elements.calculateHarm.submitHarm.addEventListener("click", (e) => { Functions.calculateHarm(e) })
+  ],
+  basicMoves: [
+    Elements.basicMoves.showButton.addEventListener("click", (e) => { Functions.basicMoves.displayMove(e) }),
+    Elements.basicMoves.clearButton.addEventListener("click", (e) => { Functions.basicMoves.clearMove(e) })
+  ]
 };
 
 // Functions
 const Functions = {
   statRollWithModifier: (e, modifier) => {
     e.preventDefault();
-    
+
     const dice = new AWDice(6);
     const result = dice.roll();
     const probability = new Object();
@@ -169,21 +171,27 @@ const Functions = {
 
     Elements.calculateHarm.netHarm.textContent = result;
   },
-  displayBasicMove: (e) => {
-    e.preventDefault();
+  basicMoves: {
+    displayMove: (e) => {
+      e.preventDefault();
 
-    if (Elements.basicMoves.current != null) {
-      Elements.basicMoves.current.classList.toggle("hidden");
-      Elements.basicMoves.current = document.querySelector(`#${Elements.basicMoves.selector.value}`);
-      Elements.basicMoves.current.classList.toggle("hidden");
+      const newElement = document.querySelector(`#${Elements.basicMoves.selector.value}`);
 
-    } else {
+      if (Elements.basicMoves.currentElement === null) {
+        Elements.basicMoves.currentElement = newElement;
+        Elements.basicMoves.currentElement.classList.toggle("hidden");
+      }
+      else {
+        Elements.basicMoves.currentElement.classList.toggle("hidden");
+        Elements.basicMoves.currentElement = newElement;
+        Elements.basicMoves.currentElement.classList.toggle("hidden");
+      }
+    },
+    clearMove: (e) => {
+      e.preventDefault();
 
-      Elements.basicMoves.current = document.querySelector(`#${Elements.basicMoves.selector.value}`);
-      Elements.basicMoves.current.classList.toggle("hidden");
-
+      Elements.basicMoves.currentElement?.classList.toggle("hidden");
+      Elements.basicMoves.currentElement = null;
     }
-
   }
 };
-
