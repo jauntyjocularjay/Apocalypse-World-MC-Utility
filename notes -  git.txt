@@ -13,5 +13,8 @@ fix    - fix/feature-being-worked-on
 test   - tst/feature-being-worked-on
 done   - dne/feature-being-worked-on
 
-Deleting branches
+Deleting branches, local
 $ git branch -d BRANCH-NAME
+
+Deleting branches, remote
+$ git push origin :branch1
