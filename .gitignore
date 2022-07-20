@@ -2,6 +2,7 @@
 ######################
 .replit
 .replit.nix
+remove/
 
 # Local files with user-specific variables #
 ######################
