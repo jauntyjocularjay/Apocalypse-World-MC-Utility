@@ -21,3 +21,7 @@ $ git push origin :branch1
 
 Project housecleaning
 $ git gc
+
+Remove cached files and add files that are not ignored back to the repo
+$ git rm -rf --cached .
+$ git add .
