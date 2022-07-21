@@ -48,7 +48,7 @@ const Elements = {
     selector: document.querySelector("#basicMovesSelector"),
     showButton: document.querySelector("#getMove"),
     clearButton: document.querySelector("#clearMove"),
-    currentElement: null //?
+    currentElement: null
   }
 };
 
