@@ -14,6 +14,16 @@ class AWDice {
   }
 }
 
+/*
+  @class
+  I wanted to replace the distribution object and wanted to 
+  create an easy way to add segments of an array together.
+  A DistributionArray adds a function to the Array class
+  which allows a segment of elements in an array to be 
+  added together easily. This particular implementation
+  converts the inputs from a dice value to an index and
+  adds those values together.
+*/
 class DistributionArray extends Array {
   arraySegmentSum(result1,result2){
     let result = 0.00;
@@ -86,7 +96,7 @@ const Functions = {
     const result = dice.roll();
     const probability = new Object();
   
-    //Success Distribution
+    //Success Distribution Array
     const d = new DistributionArray(
            //dice => index
       2.78,  // 2  = 0
@@ -102,6 +112,15 @@ const Functions = {
       2.78   // 12 = 10
     );
     
+    /*
+      @TODO Fix the outcome values of success, fumble, fail.
+      Although they are in the right ball park, these values 
+      no longer add up to 100% as they did when d was an 
+      object. 
+      The 0.01 modifier is there to adjust for rounding errors, 
+      it cannot be added to success because at modifier -3 
+      there is zero chance of rolling a success.
+    */
     probability.success = d.arraySegmentSum(10-modifier,12-modifier);
     probability.fumble = d.arraySegmentSum(7-modifier, 9-modifier) - 0.01;
     probability.fail = d.arraySegmentSum(2-modifier,6-modifier);
