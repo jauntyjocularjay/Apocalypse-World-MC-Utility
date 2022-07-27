@@ -23,7 +23,7 @@ const harmCalculator = {
   netHarm: document.querySelector("#netHarm")
 }
 
-const basicMoves = {
+const moveSelector = {
   selector: document.querySelector("#basicMovesSelector"),
   showButton: document.querySelector("#getMove"),
   clearButton: document.querySelector("#clearMove"),

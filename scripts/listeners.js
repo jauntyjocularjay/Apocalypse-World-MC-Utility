@@ -15,6 +15,10 @@ const harmListener = [
 ];
 
 const movesListener = [
-  basicMoves.showButton.addEventListener("click", (e) => { displayMove(e) }),
-  basicMoves.clearButton.addEventListener("click", (e) => { clearMove(e) })
+  moveSelector.showButton.addEventListener("click", (e) => {
+    basicMoves.displayMove(e) 
+  }),
+  moveSelector.clearButton.addEventListener("click", (e) => {
+    basicMoves.clearMove(e) 
+  })
 ];

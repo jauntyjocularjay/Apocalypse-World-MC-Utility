@@ -59,25 +59,27 @@ function calculateHarm(e) {
   harmCalculator.netHarm.textContent = result;
 }
 
-function displayMove(e) {
-  e.preventDefault();
-
-  const newElement = document.querySelector(`#${basicMoves.selector.value}`);
-
-  if (basicMoves.currentElement === null) {
-    basicMoves.currentElement = newElement;
-    basicMoves.currentElement.classList.toggle("hidden");
-  }
-  else {
-    basicMoves.currentElement.classList.toggle("hidden");
-    basicMoves.currentElement = newElement;
-    basicMoves.currentElement.classList.toggle("hidden");
+const basicMoves =  {
+  displayMove(e) {
+    e.preventDefault();
+  
+    const newElement = document.querySelector(`#${moveSelector.selector.value}`);
+  
+    if (moveSelector.currentElement === null) {
+      moveSelector.currentElement = newElement;
+      moveSelector.currentElement.classList.toggle("hidden");
+    }
+    else {
+      moveSelector.currentElement.classList.toggle("hidden");
+      moveSelector.currentElement = newElement;
+      moveSelector.currentElement.classList.toggle("hidden");
+    }
+  },
+  clearMove(e) {
+    e.preventDefault();
+  
+    moveSelector.currentElement?.classList.toggle("hidden");
+    moveSelector.currentElement = null;
   }
 }
 
-function clearMove(e) {
-  e.preventDefault();
-
-  basicMoves.currentElement?.classList.toggle("hidden");
-  basicMoves.currentElement = null;
-}
