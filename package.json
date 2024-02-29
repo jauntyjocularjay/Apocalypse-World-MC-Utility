@@ -1,0 +1,15 @@
+{
+  "name": "apocalypse-world-mc-utility",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test --exit"
+  },
+  "author": "GeorgeSchafer",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "mocha": "^10.3.0"
+  }
+}

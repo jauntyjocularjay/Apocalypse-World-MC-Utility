@@ -1,13 +1,13 @@
-# Replit generated files #
-######################
+/node_modules
+/.git
+
+template.sh
+template.gitignore
+
+.gitignore
 .replit
-.replit.nix
-.config/
-
-# Local files with user-specific variables #
-######################
+replit.nix
 
 
-# Notes for personal reference #
-######################
-notes - git.txt
+
+
