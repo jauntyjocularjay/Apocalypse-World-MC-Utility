@@ -1,0 +1,43 @@
+
+html {
+    background-color: #333;
+}
+
+form {
+    padding: 8px;
+    margin: auto 25%;
+    background-color: #444;
+    color:#ccc;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px #000;
+}
+
+.toggle {
+    text-align: right;
+}
+
+.expand, .collapse {
+    padding: 0 4px;
+    cursor: pointer;
+}
+
+select {
+    padding: 8px;
+    background-color: #333;
+    color:#ccc;
+    border-radius: 8px;
+    font-size: large;
+    border-width: 0;
+}
+
+.body > p {
+    margin: 8px;
+}
+
+li {
+    margin: 4px 0;
+}
+
+.hidden {
+    display: none;
+}

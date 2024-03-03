@@ -4,7 +4,9 @@ import {
 } from './js/vjsComponents.mjs'
 import {
     moves_selector,
-    moves_display
+    moves_display,
+    expandCard,
+    collapseCard
 } from './js/Components.mjs'
 
 const el = {
@@ -26,6 +28,10 @@ document.body.appendChild(DivWrapper)
 
 el.basic_moves.form.querySelector('select').addEventListener('change', (e) => {
     moves_display(e, el.basic_moves.form.querySelector('select').value)
+})
+
+el.basic_moves.form.querySelector('.expand').addEventListener('click', (e) => {
+    expandCard(e)
 })
 
 export {

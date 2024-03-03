@@ -159,13 +159,13 @@ const BASIC_MOVES = {
         }
     },
     harm: {
-        alias: 'suffer harm',
+        alias: 'Suffer Harm',
         description: '',
         roll: 'harm',
         opt: [
             'You\'re out of action: unconscious, trapped, incoherent or panicked.',
             'It\'s worse than it seemed. Take an additional 1-harm',
-            'You lose your footing.', // opt[2]
+            'You lose your footing.',
             'You lose your grip on whatever you\'re holding.',
             'You lose track of someone or something you\'re attending to.',
             'You miss noticing something important'
