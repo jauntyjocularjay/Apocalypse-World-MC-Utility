@@ -1,0 +1,44 @@
+body {
+  background-color: #333;
+  color: #fff;
+}
+
+#wrapper {
+  margin: 0 auto;
+  /* max-width: 512px; */
+}
+
+.btn {
+  background-color: #888;
+  margin: 4px;
+  text-align: center;
+  color: #000;
+}
+
+.table {
+  background-color: #888;
+  padding: 16px;
+  text-align: center;
+  border-radius: 16px;
+  color: #000;
+}
+
+.cell {
+  border: 1px solid #000;
+}
+
+.embossment {
+  box-shadow: 1px 1px 2px #000, inset 1px 1px 1px #ddd;
+}
+
+@media screen and (width >= 640px) {
+  #wrapper {
+    width: 512px;
+  }  
+}
+
+@media screen and (width >= 512px) {
+  #wrapper {
+    width: 384px;
+  }
+}
