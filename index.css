@@ -34,7 +34,7 @@ body {
 @media screen and (width >= 640px) {
   #wrapper {
     width: 512px;
-  }  
+  }
 }
 
 @media screen and (width >= 512px) {

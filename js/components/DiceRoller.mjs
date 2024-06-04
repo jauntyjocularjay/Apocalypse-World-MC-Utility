@@ -141,6 +141,4 @@ class DiceRoller extends FlexBox {
     }
 }
 
-
-
 export { DiceRoller }
