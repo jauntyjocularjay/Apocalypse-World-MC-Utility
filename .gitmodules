@@ -1,3 +1,6 @@
 [submodule "vjsc"]
 	path = vjsc
 	url = https://www.github.com/jauntyjocularjay/vanillajscomponents.git
+[submodule "sh"]
+	path = sh
+	url = https://github.com/jauntyjocularjay/KwikGit.git
