@@ -133,6 +133,15 @@ class DiceRoller extends FlexBox {
         this.element.appendChild(outcomeTable)
         outcomeTable.appendChild(outcomeBox)
 
+
+    }
+
+    successScale(){
+        const scaleWrapper = new FlexBox(flex.r, ['table'], 'success-scale')
+        
+
+
+
     }
 
     roll(){
