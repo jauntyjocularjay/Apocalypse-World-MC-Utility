@@ -25,7 +25,6 @@ const move = {
         `• You suffer little harm (-1harm). \n`+
         `• You take definite and undeniable control of it. \n`+
         `• You impress, dismay, or frighten your enemy.`,
-
-
-
 }
+
+export default move
