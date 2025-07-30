@@ -1,0 +1,55 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 8px;
+}
+
+div {
+    margin: 16px 0;
+}
+
+.container {
+    display: flex;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    border: 2px solid #fff;
+    box-shadow: 16px 0 16px #fff;
+}
+
+.modifier-btn {
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 42px;
+    margin: 8px;
+}
+
+.result-table {
+    flex: 1 1;
+}
+
+.probability-table {
+    flex: 1 1;
+}
+
+table {
+    flex: 1 1;
+    margin: 8px;
+}
+
+th {
+    background-color: #111;
+}
+
+th, td {
+    flex: 1 1 space-between;
+    outline: solid 1px;
+    padding: 8px;
+}
