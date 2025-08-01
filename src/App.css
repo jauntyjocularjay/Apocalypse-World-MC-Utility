@@ -2,15 +2,44 @@ body {
     background-color: #333;
 }
 
-#root {max-width: 1024px;
+#root {
+    max-width: 1024px;
     min-width: 384px;
+    margin: 0 auto;
+    padding-top: 64px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 16px #fff;
+    min-width: 384px;
+    max-width: 1024px;
+    width: 100%;
     margin: 0 auto;
 }
 
+.card.hidden {
+    display: none;
+}
+
 .icon-bar {
-    box-shadow: 0px 0px 8px #fff;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100%);
+    max-width: 1024px;
+    min-width: 384px;
+    margin: 0 auto;
+    z-index: 1000;
+    box-shadow: inset 0px 0px 8px #fff;
     border-radius: 16px;
-    padding: 1px 4px;
+    padding: 8px 8px;
 }
 
 .icon {
@@ -37,14 +66,6 @@ div {
 
 .container {
     display: flex;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 16px;
-    border: 2px solid #fff;
-    box-shadow: 0 0 16px #fff;
 }
 
 .modifier-btn {
