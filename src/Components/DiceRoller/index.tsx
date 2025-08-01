@@ -3,10 +3,13 @@ import ButtonModifier from './ButtonModifier'
 import ReferenceTable from './ReferenceTable'
 // import { attributes, display, event, inputType, tags, unit } from '../../ReactConstants/'
 
+
+
 const DiceRoller = () => {
-    const [die1, setDie1] = useState(0)
-    const [die2, setDie2] = useState(0)
-    const [modifier, setModifier] = useState(0)
+
+    const [_die1, setDie1] = useState(0)
+    const [_die2, setDie2] = useState(0)
+    const [_modifier, setModifier] = useState(0)
 
     function Buttons() {
         const min = -3
@@ -18,7 +21,7 @@ const DiceRoller = () => {
                 <ButtonModifier
                     key={`btn(${i})`}
                     modifier={i}
-                    funct={HandleButtonClick}
+                    funct={onClickModifierButton}
                 />
             )
 
@@ -28,21 +31,17 @@ const DiceRoller = () => {
         return buttons
     }
 
-    function RollDie() {
+    function onClickModifierButton(_modifier: number) {
         setDie1(Math.floor(1 + Math.random() * 6))
         setDie2(Math.floor(1 + Math.random() * 6))
-    }
-
-    function HandleButtonClick() {
-        RollDie()
-        setModifier(modifier)
+        setModifier(_modifier)
     }
 
     return (
         <div className='card'>
             <h1>Dice Roller + Modifier</h1>
             <div className='container buttons'>{Buttons()}</div>
-            <ReferenceTable die1={die1} die2={die2} modifier={modifier} />
+            <ReferenceTable die1={_die1} die2={_die2} modifier={_modifier} />
         </div>
     )
 }

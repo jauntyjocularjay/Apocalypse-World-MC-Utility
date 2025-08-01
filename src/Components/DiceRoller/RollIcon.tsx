@@ -1,4 +1,4 @@
-import dice from '../../assets/dice.svg'
+import dice from '../../Assets/Icons/dice.svg'
 
 
 
