@@ -4,11 +4,10 @@
 
 type Props = {
     modifier: number
-    funct: Function
+    funct: (modifier: number) => void
 }
 
 const ModifierButton: React.FC<Props> = ({ modifier, funct }) => {
-
     return (
         <>
             <input
