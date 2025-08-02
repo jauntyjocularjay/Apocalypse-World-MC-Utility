@@ -98,3 +98,13 @@ th, td {
     outline: solid 1px;
     padding: 8px;
 }
+
+.harm-calculator-output {
+    display: flex;
+    flex: row;
+}
+
+.harm-selector .resistance-selector .net-harm-output {
+    flex-shrink: 1;
+    flex-grow: 1;
+}

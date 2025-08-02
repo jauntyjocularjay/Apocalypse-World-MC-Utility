@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import DiceRoller from './Components/DiceRoller'
 import IconBar from './Components/Navigation'
+import NetHarmCalculator from './Components/NetHarm'
 
 function App() {
     const [_diceRollerVisisble, setDiceRollerVisisble] = useState(true)
@@ -20,6 +21,7 @@ function App() {
         <>
             <IconBar _toggleDiceRoller={toggleDiceRoller} _toggleNetHarm={toggleNetHarm} _toggleMoves={toggleMoves}/>
             <DiceRoller _visible={_diceRollerVisisble} />
+            <NetHarmCalculator />
         </>
     )
 }

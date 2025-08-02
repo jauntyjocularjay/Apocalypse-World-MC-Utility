@@ -3,17 +3,26 @@ import Option from "./Option"
 
 
 type Props = {
-    _defaultValue: string
+    _onChange: (harm: number) => void
 }
 
+const SelectHarmValue: React.FC<Props> = ({ _onChange }) => {
+    const options = [<Option key='harm' _value='Harm' />]
 
-const SelectHarmValue: React.FC<Props> = ({_defaultValue}) => {
-    
-    const options = [
-        <Option value='Armor' />
-    ]
+    function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
+        const value = parseInt(event.target.value)
+        _onChange(value)
+    }
 
-    return <input type='select' defaultValue={_defaultValue}></input>
+    for (let i = 0; i <= 10; i++) {
+        options.push(<Option key={`resistance-${i}`} _value={`${i}`} />)
+    }
+
+    return (
+        <select className='harm-selector' defaultValue='Harm' onChange={handleChange}>
+            {options}
+        </select>
+    )
 }
 
 export default SelectHarmValue
