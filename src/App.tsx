@@ -5,7 +5,7 @@ import IconBar from './Components/Navigation'
 import NetHarmCalculator from './Components/NetHarm'
 
 function App() {
-    const [_diceRollerVisisble, setDiceRollerVisisble] = useState(true)
+    const [_diceRollerVisisble, setDiceRollerVisisble] = useState(false)
     const [_netHarmVisisble, setNetHarmVisible] = useState(false)
     const [_movesVisisble, setMovesVisible] = useState(false)
 
