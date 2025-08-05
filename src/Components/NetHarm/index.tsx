@@ -2,9 +2,16 @@ import { useState } from 'react'
 import SelectHarmValue from './SelectHarmValue'
 import SelectResistanceValue from './SelectResistanceValue'
 
-const NetHarmCalculator = () => {
+
+
+type Props = {
+    _visible: boolean
+}
+
+const NetHarmCalculator: React.FC<Props> = ({_visible}) => {
     const [harm, setHarm] = useState(0)
     const [resistance, setResistance] = useState(0)
+    const classes = ['card']
 
     function calculateHarm() {
         const result = harm - resistance
@@ -19,8 +26,10 @@ const NetHarmCalculator = () => {
         setResistance(resistance)
     }
 
+    if(!_visible) classes.push('hidden')
+
     return (
-        <form name='harm-calculator' className='card' flex-flow='row'>
+        <form name='harm-calculator' className={classes.join(' ')} flex-flow='row'>
             <h1>Harm Calculator</h1>
             <div className='harm-calculator-output'>
                 <SelectHarmValue _onChange={onSelectHarm} />

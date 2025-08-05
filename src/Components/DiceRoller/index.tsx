@@ -11,15 +11,12 @@ type Props = {
 
 const DiceRoller: React.FC<Props> = ( { _visible } ) => {
 
-    let _className = ''
     let classes = [ 'card' ]
     const [_die1, setDie1] = useState(0)
     const [_die2, setDie2] = useState(0)
     const [_modifier, setModifier] = useState(0)
 
     if(!_visible) classes.push('hidden')
-
-    _className = classes.join(' ')
 
     function Buttons() {
         const min = -3
@@ -48,7 +45,7 @@ const DiceRoller: React.FC<Props> = ( { _visible } ) => {
     }
 
     return (
-        <form name='dice-roller' className={_className}>
+        <form name='dice-roller' className={classes.join(' ')}>
             <h1>Dice Roller + Modifier</h1>
             <div className='container buttons'>{Buttons()}</div>
             <ReferenceTable die1={_die1} die2={_die2} modifier={_modifier} />
