@@ -7,9 +7,7 @@ type Props = {
 }
 
 const Option: React.FC<Props> = ({_value}) => {
-  return (
-    <option value={_value}>{_value}</option>
-  )
+  return ( <option value={_value}>{_value}</option> )
 }
 
 export default Option

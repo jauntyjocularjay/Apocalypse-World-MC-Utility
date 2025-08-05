@@ -29,13 +29,17 @@ const NetHarmCalculator: React.FC<Props> = ({_visible}) => {
     if(!_visible) classes.push('hidden')
 
     return (
-        <form name='harm-calculator' className={classes.join(' ')} flex-flow='row'>
+        <form
+            name='harm-calculator'
+            className={classes.join(' ')}
+            flex-flow='row'
+        >
             <h1>Harm Calculator</h1>
-            <div className='harm-calculator-output'>
+            <label form='harm-calculator' className='harm-calculator-output'>
                 <SelectHarmValue _onChange={onSelectHarm} />
                 <SelectResistanceValue _onChange={onSelectResistance} />
                 <div className='net-harm-output'>{calculateHarm()}</div>
-            </div>
+            </label>
         </form>
     )
 }
