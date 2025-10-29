@@ -1,5 +1,3 @@
-// import { attributes, display, event, inputType, tags, unit } from "../../ReactConstants/"
-
 type Props = {
     die1: number
     die2: number
@@ -7,7 +5,6 @@ type Props = {
 }
 
 const ReferenceTable: React.FC<Props> = ({ die1, die2, modifier }) => {
-
     const result = die1 + die2 + modifier
     return (
         <>
@@ -30,20 +27,24 @@ const ReferenceTable: React.FC<Props> = ({ die1, die2, modifier }) => {
                 </tbody>
             </table>
 
-            {/* <table className='probability-table'>
-                <tr>
-                    <th>Scale</th>
-                    <td>Success</td>
-                    <td>Fumble</td>
-                    <td>Fail</td>
-                </tr>
-                <tr>
-                    <th>%</th>
-                    <td>0.00%</td>
-                    <td>0.00%</td>
-                    <td>0.00%</td>
-                </tr>
-            </table> */}
+            <table className='probability-table'>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <td>Success</td>
+                        <td>Fumble</td>
+                        <td>Fail</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>%</th>
+                        <td>0.00%</td>
+                        <td>0.00%</td>
+                        <td>0.00%</td>
+                    </tr>
+                </tbody>
+            </table>
         </>
     )
 }
