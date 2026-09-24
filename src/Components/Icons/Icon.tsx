@@ -1,11 +1,10 @@
 
 type Props = {
-    _src: string
-    _onClick: () => void
+    src: string
+    onClick: React.MouseEventHandler<HTMLImageElement>
 }
 
-const Icon: React.FC<Props> = ({ _src, _onClick }) => {
-    return <img key='icon' src={_src} className='icon' onClick={_onClick} />
+export default function Icon({ src, onClick }: Props) {
+    return <img key='icon' src={src} className='icon' onClick={onClick} />
 }
 
-export default Icon

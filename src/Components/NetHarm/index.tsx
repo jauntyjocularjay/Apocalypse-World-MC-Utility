@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import SelectHarmValue from './SelectHarmValue'
 import SelectResistanceValue from './SelectResistanceValue'
 
 
 
 type Props = {
-    _visible: boolean
+    visible: boolean
 }
 
-const NetHarmCalculator: React.FC<Props> = ({_visible}) => {
+export default function NetHarmCalculator ({visible}: Props) {
     const [harm, setHarm] = useState(0)
     const [resistance, setResistance] = useState(0)
     const classes = ['card']
@@ -26,7 +26,7 @@ const NetHarmCalculator: React.FC<Props> = ({_visible}) => {
         setResistance(resistance)
     }
 
-    if(!_visible) classes.push('hidden')
+    if(!visible) classes.push('hidden')
 
     return (
         <form
@@ -36,12 +36,11 @@ const NetHarmCalculator: React.FC<Props> = ({_visible}) => {
         >
             <h1>Harm Calculator</h1>
             <label form='harm-calculator' className='harm-calculator-output'>
-                <SelectHarmValue _onChange={onSelectHarm} />
-                <SelectResistanceValue _onChange={onSelectResistance} />
+                <SelectHarmValue onChange={onSelectHarm} />
+                <SelectResistanceValue onChange={onSelectResistance} />
                 <div className='net-harm-output'>{calculateHarm()}</div>
             </label>
         </form>
     )
 }
 
-export default NetHarmCalculator

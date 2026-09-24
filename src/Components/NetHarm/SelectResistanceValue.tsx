@@ -3,21 +3,21 @@ import Option from '../Common/Option'
 
 
 type Props = {
-    _onChange: (resistance: number) => void
+    onChange: (resistance: number) => void
 }
 
-const SelectArmorValue: React.FC<Props> = ({ _onChange }) => {
+export default function SelectArmorValue({ onChange }:Props) {
     const options: React.JSX.Element[] = [
-        <Option key='resistance' _value='Resistance' />
+        <Option key='resistance' value='Resistance' />
     ]
 
     function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
         const value = parseInt(event.target.value)
-        _onChange(value)
+        onChange(value)
     }
 
     for (let i = 0; i <= 10; i++) {
-        options.push(<Option key={`resistance-${i}`} _value={`${i}`} />)
+        options.push(<Option key={`resistance-${i}`} value={`${i}`} />)
     }
 
     return (
@@ -26,5 +26,3 @@ const SelectArmorValue: React.FC<Props> = ({ _onChange }) => {
         </select>
     )
 }
-
-export default SelectArmorValue

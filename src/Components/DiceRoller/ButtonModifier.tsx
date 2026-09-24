@@ -7,7 +7,7 @@ type Props = {
     funct: (modifier: number) => void
 }
 
-const ModifierButton: React.FC<Props> = ({ modifier, funct }) => {
+export default function ModifierButton({ modifier, funct }: Props) {
     return (
         <>
             <input
@@ -20,4 +20,4 @@ const ModifierButton: React.FC<Props> = ({ modifier, funct }) => {
     )
 }
 
-export default ModifierButton
+

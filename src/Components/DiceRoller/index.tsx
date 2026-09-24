@@ -6,17 +6,17 @@ import ReferenceTable from './ReferenceTable'
 
 
 type Props = {
-    _visible: boolean
+    visible: boolean
 }
 
-const DiceRoller: React.FC<Props> = ( { _visible } ) => {
+export default function DiceRoller( { visible }: Props ) {
 
     let classes = [ 'card' ]
-    const [_die1, setDie1] = useState(0)
-    const [_die2, setDie2] = useState(0)
-    const [_modifier, setModifier] = useState(0)
+    const [die1, setDie1] = useState(0)
+    const [die2, setDie2] = useState(0)
+    const [modifier, setModifier] = useState(0)
 
-    if(!_visible) classes.push('hidden')
+    if(!visible) classes.push('hidden')
 
     function Buttons() {
         const min = -3
@@ -38,19 +38,19 @@ const DiceRoller: React.FC<Props> = ( { _visible } ) => {
         return buttons
     }
 
-    function onClickModifierButton(_modifier: number) {
+    function onClickModifierButton(modifier: number) {
         setDie1(Math.floor(1 + Math.random() * 6))
         setDie2(Math.floor(1 + Math.random() * 6))
-        setModifier(_modifier)
+        setModifier(modifier)
     }
 
     return (
         <form name='dice-roller' className={classes.join(' ')}>
             <h1>Dice Roller + Modifier</h1>
             <div className='container buttons'>{Buttons()}</div>
-            <ReferenceTable die1={_die1} die2={_die2} modifier={_modifier} />
+            <ReferenceTable die1={die1} die2={die2} modifier={modifier} />
         </form>
     )
 }
 
-export default DiceRoller
+

@@ -4,7 +4,7 @@ type Props = {
     modifier: number
 }
 
-const ReferenceTable: React.FC<Props> = ({ die1, die2, modifier }) => {
+export default function ReferenceTable({ die1, die2, modifier }: Props) {
     const result = die1 + die2 + modifier
     return (
         <>
@@ -49,4 +49,4 @@ const ReferenceTable: React.FC<Props> = ({ die1, die2, modifier }) => {
     )
 }
 
-export default ReferenceTable
+

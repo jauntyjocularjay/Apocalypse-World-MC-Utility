@@ -1,13 +1,7 @@
-import React from 'react'
-
-
-
 type Props = {
-    _value: string
+    value: string
 }
 
-const Option: React.FC<Props> = ({_value}) => {
-  return ( <option value={_value}>{_value}</option> )
+export default function Option({ value }: Props) {
+    return <option value={value}>{value}</option>
 }
-
-export default Option

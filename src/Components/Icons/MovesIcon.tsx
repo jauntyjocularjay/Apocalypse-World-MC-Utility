@@ -1,14 +1,13 @@
+import Icon from '../Icons/Icon'
 import MovesSVG from '../../Assets/Icons/moves.svg'
 
 
 
 type Props = {
-    _onClick: () => void
-
+    onClick: React.MouseEventHandler<HTMLImageElement>
 }
 
-const MovesIcon: React.FC<Props> = ({ _onClick }) => {
-    return <img src={MovesSVG} className={'icon'} onClick={_onClick} />
+export default function MovesIcon({ onClick }: Props) {
+    return <Icon src={MovesSVG} onClick={onClick} />
 }
 
-export default MovesIcon

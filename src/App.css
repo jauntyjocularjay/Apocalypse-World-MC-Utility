@@ -120,3 +120,8 @@ select:hover {
     margin: 4px;
 }
 
+#text-output {
+    margin: 16px;
+    text-align: left;
+    font-size: medium;
+}

@@ -3,11 +3,11 @@ import dice from '../../Assets/Icons/dice.svg'
 
 
 type Props = {
-    _onClick: () => void
+    onClick: React.MouseEventHandler<HTMLImageElement>
 }
 
-const RollIcon: React.FC<Props> = ({ _onClick }) => {
-    return <Icon _src={dice} _onClick={_onClick} />
+export default function RollIcon({ onClick }: Props) {
+    return <Icon src={dice} onClick={onClick} />
 }
 
-export default RollIcon
+

@@ -1,23 +1,23 @@
-import { useState } from 'react'
-
 type Props = {
-    _key: string
-    _form: string
-    _options: React.ReactElement[]
+    id: string
+    form: string
+    options: React.ReactElement[]
+    value: string
+    onChange: (value: string) => void
 }
 
-const Select: React.FC<Props> = ({ _key, _form, _options }) => {
-    const [value, setValue] = useState('')
-    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setValue(event.target.value)
+export default function Select({ id, form, options, value, onChange }: Props) {
+
+    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        onChange(e.target.value)
     }
 
 
     return (
-        <select key={_key} form={_form} value={value} onChange={handleChange}>
-            {_options}
+        <select id={id} form={form} value={value} onChange={handleChange}>
+            {options}
         </select>
     )
 }
 
-export default Select
+

@@ -1,23 +1,23 @@
 import RollIcon from '../Icons/RollIcon'
 import HarmIcon from '../Icons/NetHarmIcon'
-// import MovesIcon from '../Icons/MovesIcon'
+import MovesIcon from '../Icons/MovesIcon'
 
 
 
 type Props = {
-    _toggleDiceRoller: () => void
-    _toggleNetHarm: () => void
-    // _toggleMoves: () => void
+    toggleDiceRoller: React.MouseEventHandler<HTMLImageElement>
+    toggleNetHarm: React.MouseEventHandler<HTMLImageElement>
+    toggleMoves: React.MouseEventHandler<HTMLImageElement>
 }
 
-const IconBar: React.FC<Props> = ( { _toggleDiceRoller, _toggleNetHarm, /*_toggleMoves*/ }) => {
+export default function IconBar( { toggleDiceRoller, toggleNetHarm, toggleMoves }: Props) {
     return (
         <div className='icon-bar'>
-            <RollIcon _onClick={ _toggleDiceRoller} />
-            <HarmIcon _onClick={ _toggleNetHarm } />
-            {/* <MovesIcon _onClick={ _toggleMoves } /> */}
+            <RollIcon onClick={ toggleDiceRoller} />
+            <HarmIcon onClick={ toggleNetHarm } />
+            <MovesIcon onClick={ toggleMoves } />
         </div>
     )
 }
 
-export default IconBar
+

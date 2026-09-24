@@ -3,43 +3,42 @@ import './App.css'
 import DiceRoller from './Components/DiceRoller'
 import IconBar from './Components/Navigation'
 import NetHarmCalculator from './Components/NetHarm'
-// import MoveDictionary from './Components/MoveDictionary'
+import MoveDictionary from './Components/MoveDictionary/'
 
-function App() {
-    let [_diceRollerVisisble, setDiceRollerVisisble] = useState(true)
-    let [_netHarmVisisble, setNetHarmVisible] = useState(false)
-    // let [_movesVisisble, setMovesVisible] = useState(false)
+export default function App() {
+    let [diceRollerVisisble, setDiceRollerVisisble] = useState(true)
+    let [netHarmVisisble, setNetHarmVisible] = useState(false)
+    let [movesVisisble, setMovesVisible] = useState(false)
 
     const toggleDiceRoller = () => {
-        setDiceRollerVisisble(() => _diceRollerVisisble = true)
-        setNetHarmVisible(() => _netHarmVisisble = false)
-        // setMovesVisible((prevState) => (prevState = false))
+        setDiceRollerVisisble(() => (diceRollerVisisble = true))
+        setNetHarmVisible(() => (netHarmVisisble = false))
+        setMovesVisible(() => movesVisisble = false)
     }
 
     const toggleNetHarm = () => {
-        setDiceRollerVisisble(() => (_diceRollerVisisble = false))
-        setNetHarmVisible((prevState) => !prevState)
-        // setMovesVisible((prevState) => (prevState = false))
+        setDiceRollerVisisble(() => (diceRollerVisisble = false))
+        setNetHarmVisible(() => netHarmVisisble = true)
+        setMovesVisible(() => movesVisisble = false)
     }
 
-    // const toggleMoves = () => {
-    //     setMovesVisible((prevState) => !prevState)
-    //     setDiceRollerVisisble((prevState) => (prevState = false))
-    //     setNetHarmVisible((prevState) => (prevState = false))
-    // }
+    const toggleMoves = () => {
+        setDiceRollerVisisble(() => diceRollerVisisble = false)
+        setNetHarmVisible(() => netHarmVisisble = false)
+        setMovesVisible(() => (movesVisisble = true))
+    }
 
     return (
         <>
             <IconBar
-                _toggleDiceRoller={toggleDiceRoller}
-                _toggleNetHarm={toggleNetHarm}
-                // _toggleMoves={toggleMoves}
+                toggleDiceRoller={toggleDiceRoller}
+                toggleNetHarm={toggleNetHarm}
+                toggleMoves={toggleMoves}
             />
-            <DiceRoller _visible={_diceRollerVisisble} />
-            <NetHarmCalculator _visible={_netHarmVisisble} />
-            {/* <MoveDictionary _visible={_movesVisisble} /> */}
+            <DiceRoller visible={diceRollerVisisble} />
+            <NetHarmCalculator visible={netHarmVisisble} />
+            <MoveDictionary visible={movesVisisble} />
         </>
     )
 }
 
-export default App
